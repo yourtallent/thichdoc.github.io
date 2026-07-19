@@ -1,13 +1,18 @@
 ---
 layout: default
 ---
+{% assign cover_path = page.dir | append: 'cover.jpg' %}
+
 <article class="story-intro">
   <p class="eyebrow">Giới thiệu truyện</p>
   <h1>{{ page.story_title | default: page.title }}</h1>
 
-  {% if page.cover %}
-    <img class="story-cover" src="{{ page.cover | relative_url }}" alt="Bìa truyện {{ page.story_title | default: page.title }}">
-  {% endif %}
+  <img
+    class="story-cover"
+    src="{{ cover_path | relative_url }}"
+    alt="Bìa truyện {{ page.story_title | default: page.title }}"
+    loading="eager"
+  >
 
   {% if page.summary %}
     <p class="story-summary">{{ page.summary }}</p>
