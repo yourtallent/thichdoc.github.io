@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="story-intro">
+  <p class="eyebrow">Giới thiệu truyện</p>
+  <h1>{{ page.story_title | default: page.title }}</h1>
+
+  {% if page.cover %}
+    <img class="story-cover" src="{{ page.cover | relative_url }}" alt="Bìa truyện {{ page.story_title | default: page.title }}">
+  {% endif %}
+
+  {% if page.summary %}
+    <p class="story-summary">{{ page.summary }}</p>
+  {% endif %}
+
+  <div class="story-meta">
+    {% if page.genre %}<span>{{ page.genre }}</span>{% endif %}
+    {% if page.status %}<span>{{ page.status }}</span>{% endif %}
+    {% if page.chapter_count %}<span>{{ page.chapter_count }} chương</span>{% endif %}
+  </div>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if page.first_chapter_url %}
+    <a class="primary-button" href="{{ page.first_chapter_url | relative_url }}">Bắt đầu đọc</a>
+  {% endif %}
+
+  {% if page.chapters %}
+  <section class="chapter-list">
+    <h2>Mục lục</h2>
+    <ol>
+      {% for chapter in page.chapters %}
+        <li><a href="{{ chapter.url | relative_url }}">{{ chapter.title }}</a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+</article>

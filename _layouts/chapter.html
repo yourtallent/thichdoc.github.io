@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="chapter-page">
+  <header class="chapter-header">
+    <a class="story-back" href="{{ page.intro_url | relative_url }}">{{ page.story_title }}</a>
+    <p class="eyebrow">Chương {{ page.chapter_number }}</p>
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  {% include chapter_nav.html %}
+
+  <div class="prose chapter-content">
+    {{ content }}
+  </div>
+
+  {% include chapter_nav.html %}
+</article>
+
+{% include support_modal.html %}
+<script src="{{ '/assets/js/chapter.js' | relative_url }}"></script>
