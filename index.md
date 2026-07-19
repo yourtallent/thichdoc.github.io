@@ -10,4 +10,4 @@ Những câu chuyện ngôn tình cổ đại vừa và ngắn, dành cho một 
 
 ## Truyện đang có
 
-- [Truyện mẫu: Gió qua rèm ngọc]({{ '/ten-truyen-mau/gioithieu/' | relative_url }})
+- [Truyện mẫu: Gió qua rèm ngọc]({{ '/gio-qua-rem-ngoc/gioithieu/' | relative_url }})
